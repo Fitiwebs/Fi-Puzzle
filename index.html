@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Tile Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧩 Sliding Tile Puzzle</h1>
+            <div class="stats">
+                <div class="stat">
+                    <label>Level:</label>
+                    <span id="level">1</span>
+                </div>
+                <div class="stat">
+                    <label>Moves:</label>
+                    <span id="moves">0</span>
+                </div>
+                <div class="stat">
+                    <label>Time:</label>
+                    <span id="timer">00:00</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-section">
+                <div id="puzzle-board" class="puzzle-board"></div>
+            </div>
+
+            <div class="controls">
+                <button id="new-game-btn" class="btn btn-primary">New Game</button>
+                <button id="shuffle-btn" class="btn btn-secondary">Shuffle</button>
+                <button id="hint-btn" class="btn btn-secondary">Hint</button>
+                <button id="reset-btn" class="btn btn-secondary">Reset</button>
+            </div>
+
+            <div class="level-select">
+                <h3>Select Level:</h3>
+                <div class="level-buttons">
+                    <button class="level-btn" data-level="1">3x3</button>
+                    <button class="level-btn" data-level="2">4x4</button>
+                    <button class="level-btn" data-level="3">5x5</button>
+                </div>
+            </div>
+        </main>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2 id="modal-title">Congratulations!</h2>
+                <p id="modal-message"></p>
+                <div class="modal-stats">
+                    <p>Level: <span id="modal-level"></span></p>
+                    <p>Moves: <span id="modal-moves"></span></p>
+                    <p>Time: <span id="modal-time"></span></p>
+                </div>
+                <button id="modal-next-btn" class="btn btn-primary">Next Level</button>
+                <button id="modal-restart-btn" class="btn btn-secondary">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
