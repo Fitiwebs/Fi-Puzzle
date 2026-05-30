@@ -4,23 +4,36 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    min-height: 100vh;
 }
 
-.container {
+.wrapper {
+    display: flex;
+    flex-direction: column;
     background: white;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    padding: 30px;
-    max-width: 600px;
     width: 100%;
+    max-width: 600px;
+    min-height: auto;
+    overflow: hidden;
+}
+
+.container {
+    padding: 30px;
+    flex: 1;
 }
 
 header {
@@ -243,6 +256,7 @@ main {
     text-align: center;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     animation: slideIn 0.3s ease;
+    max-width: 90%;
 }
 
 @keyframes slideIn {
@@ -292,13 +306,105 @@ main {
     margin-right: 10px;
 }
 
-@media (max-width: 500px) {
+footer {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 20px 30px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+}
+
+footer p {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+footer strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .wrapper {
+        border-radius: 15px;
+    }
+
     .container {
         padding: 20px;
     }
 
     h1 {
+        font-size: 2em;
+    }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .stat {
+        min-width: 80px;
+        padding: 8px 15px;
+    }
+
+    .stat span {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 5px;
+    }
+
+    .wrapper {
+        border-radius: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
         font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    .stats {
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    .stat {
+        min-width: 70px;
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .stat label {
+        font-size: 0.8em;
+    }
+
+    .stat span {
+        font-size: 1.1em;
+    }
+
+    main {
+        margin-bottom: 15px;
+    }
+
+    .game-section {
+        margin-bottom: 15px;
+    }
+
+    .puzzle-board {
+        padding: 15px;
+        gap: 6px;
     }
 
     .puzzle-board.level-1 {
@@ -318,10 +424,110 @@ main {
 
     .tile {
         font-size: 1.4em;
+        border-radius: 8px;
+    }
+
+    .controls {
+        gap: 8px;
+        margin-bottom: 15px;
     }
 
     .btn {
         padding: 10px 16px;
+        font-size: 0.85em;
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .level-select {
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .level-select h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+
+    .level-btn {
+        padding: 6px 12px;
+        font-size: 0.85em;
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .level-buttons {
+        gap: 8px;
+    }
+
+    .modal-content {
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    #modal-title {
+        font-size: 1.6em;
+        margin-bottom: 10px;
+    }
+
+    #modal-message {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+
+    .modal-stats {
+        padding: 12px;
+        margin: 15px 0;
+    }
+
+    .modal-stats p {
         font-size: 0.9em;
+        margin: 6px 0;
+    }
+
+    .modal-content button {
+        margin-top: 10px;
+        margin-right: 5px;
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.75em;
+    }
+
+    .level-btn {
+        padding: 5px 10px;
+        font-size: 0.75em;
+    }
+
+    .puzzle-board.level-1 {
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: repeat(3, 60px);
+    }
+
+    .puzzle-board.level-2 {
+        grid-template-columns: repeat(4, 50px);
+        grid-template-rows: repeat(4, 50px);
+    }
+
+    .puzzle-board.level-3 {
+        grid-template-columns: repeat(5, 40px);
+        grid-template-rows: repeat(5, 40px);
     }
 }
