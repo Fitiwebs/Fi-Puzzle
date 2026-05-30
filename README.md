@@ -1,6 +1,6 @@
 # 🧩 Fi-Puzzle Game | 1.0
 
-A fully-featured Fi-Puzzle Game built with HTML, CSS, and JavaScript. Challenge yourself with multiple difficulty levels and track your progress with move counters and timers.
+A fully-featured Fi-Puzzle Game built by Fitiwebs with HTML, CSS, and JavaScript. Challenge yourself with multiple difficulty levels and track your progress with move counters and timers.
 
 ## Features
 
