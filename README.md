@@ -1,4 +1,4 @@
-# 🧩 Fi-Puzzle Game | 1.0
+# Fi-Puzzle Game | 1.0
 
 # Play Online | No Ads
 
